@@ -1,27 +1,20 @@
 
-# Ju Modas - Loja de Roupas
+Ju Modas - Site de E-commerce
 
-Este é um site e-commerce básico para a loja Ju Modas, desenvolvido com Flask.
+Este projeto é um site simples de e-commerce para a loja Ju Modas, feito com Flask.
 
-## Como executar
-
+Como executar localmente:
 1. Instale o Flask:
    pip install flask
 
 2. Execute o site:
    python app.py
 
-3. Acesse no navegador:
-   http://127.0.0.1:5000
+Como publicar no Render.com:
+1. Crie um repositório no GitHub com esses arquivos.
+2. No Render.com, crie um novo Web Service.
+3. Configure:
+   - Build Command: pip install -r requirements.txt
+   - Start Command: python app.py
 
-## Como adicionar ou editar fotos dos produtos
-
-- Coloque as imagens na pasta `static/images/`.
-- Atualize o nome da imagem no código `app.py` na propriedade `imagem` de cada produto.
-- As imagens devem estar em formato JPG ou PNG.
-
-## Estrutura
-
-- `app.py`: código principal do site.
-- `templates/index.html`: layout HTML.
-- `static/images/`: imagens dos produtos.
+O site será publicado automaticamente.
