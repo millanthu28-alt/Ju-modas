@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Ju Modas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+        header { background: #e91e63; color: white; padding: 1em; text-align: center; }
+        nav { background: #f8bbd0; padding: 1em; text-align: center; }
+        nav a { margin: 0 1em; color: #880e4f; text-decoration: none; font-weight: bold; }
+        .produtos { display: flex; flex-wrap: wrap; justify-content: center; padding: 2em; }
+        .produto { background: white; border: 1px solid #ddd; border-radius: 8px; margin: 1em; padding: 1em; width: 200px; text-align: center; }
+        .produto img { width: 100%; height: auto; border-radius: 4px; }
+        .produto h3 { margin: 0.5em 0; }
+        .produto button { background: #e91e63; color: white; border: none; padding: 0.5em 1em; border-radius: 4px; cursor: pointer; }
+        footer { background: #f8bbd0; text-align: center; padding: 1em; margin-top: 2em; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ju Modas</h1>
+        <p>Moda feminina com estilo e elegância</p>
+    </header>
+    <nav>
+        <a href="/">Todos</a>
+        <a href="/categoria/Vestidos">Vestidos</a>
+        <a href="/categoria/Camisas">Camisas</a>
+        <a href="/categoria/Calças">Calças</a>
+        <a href="/categoria/Blusas">Blusas</a>
+    </nav>
+    <div class="produtos">
+        {% for produto in produtos %}
+        <div class="produto">
+            <img src="{{ url_for('static', filename='images/' + produto.imagem) }}" alt="{{ produto.nome }}">
+            <h3>{{ produto.nome }}</h3>
+            <p>R$ {{ produto.preco }}</p>
+            <button>Adicionar ao Carrinho</button>
+        </div>
+        {% endfor %}
+    </div>
+    <footer>
+        <p>&copy; 2024 Ju Modas - Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
